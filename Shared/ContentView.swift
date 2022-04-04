@@ -1,10 +1,11 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by Carsten Müller on 03.04.22.
-//
+/**
+ 
+ ContentView.swift
+ Shared
 
+ Created by Carsten Müller on 03.04.22.
+ Copyright © 2022 Carsten Müller. All rights reserved.
+ */
 import SwiftUI
 
 struct ContentView: View {

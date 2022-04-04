@@ -7,21 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9303771427FA31070040F026 /* LensEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303771327FA31070040F026 /* LensEditor.swift */; };
+		9303771527FA31160040F026 /* LensEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9303771327FA31070040F026 /* LensEditor.swift */; };
 		9326DF0C27F9E7BD00898519 /* DoFCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326DEFC27F9E7BB00898519 /* DoFCalculatorApp.swift */; };
 		9326DF0D27F9E7BD00898519 /* DoFCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326DEFC27F9E7BB00898519 /* DoFCalculatorApp.swift */; };
 		9326DF0E27F9E7BD00898519 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326DEFD27F9E7BB00898519 /* ContentView.swift */; };
 		9326DF0F27F9E7BD00898519 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326DEFD27F9E7BB00898519 /* ContentView.swift */; };
 		9326DF1027F9E7BD00898519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9326DEFE27F9E7BD00898519 /* Assets.xcassets */; };
 		9326DF1127F9E7BD00898519 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9326DEFE27F9E7BD00898519 /* Assets.xcassets */; };
+		9326DF1C27F9E88D00898519 /* LensDatabase.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 9326DF1B27F9E88D00898519 /* LensDatabase.JSON */; };
+		9326DF1D27F9E88D00898519 /* LensDatabase.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 9326DF1B27F9E88D00898519 /* LensDatabase.JSON */; };
+		9354286127FA417F00ECF1E7 /* DoFCalc in Frameworks */ = {isa = PBXBuildFile; productRef = 9354286027FA417F00ECF1E7 /* DoFCalc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9303771327FA31070040F026 /* LensEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensEditor.swift; sourceTree = "<group>"; };
 		9326DEFC27F9E7BB00898519 /* DoFCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoFCalculatorApp.swift; sourceTree = "<group>"; };
 		9326DEFD27F9E7BB00898519 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9326DEFE27F9E7BD00898519 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9326DF0327F9E7BD00898519 /* DoFCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoFCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9326DF0927F9E7BD00898519 /* DoFCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoFCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9326DF0B27F9E7BD00898519 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		9326DF1B27F9E88D00898519 /* LensDatabase.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LensDatabase.JSON; sourceTree = "<group>"; };
+		9354286227FA41DE00ECF1E7 /* DoFCalc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DoFCalc; path = ../DoFCalc; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,15 +44,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9354286127FA417F00ECF1E7 /* DoFCalc in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9303771227FA30ED0040F026 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9303771327FA31070040F026 /* LensEditor.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9303771627FA33540040F026 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				9354286227FA41DE00ECF1E7 /* DoFCalc */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		9326DEF627F9E7BB00898519 = {
 			isa = PBXGroup;
 			children = (
+				9303771627FA33540040F026 /* Packages */,
+				9326DF1A27F9E7C500898519 /* Assets */,
 				9326DEFB27F9E7BB00898519 /* Shared */,
 				9326DF0A27F9E7BD00898519 /* macOS */,
 				9326DF0427F9E7BD00898519 /* Products */,
@@ -54,9 +81,9 @@
 		9326DEFB27F9E7BB00898519 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9303771227FA30ED0040F026 /* Views */,
 				9326DEFC27F9E7BB00898519 /* DoFCalculatorApp.swift */,
 				9326DEFD27F9E7BB00898519 /* ContentView.swift */,
-				9326DEFE27F9E7BD00898519 /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -76,6 +103,15 @@
 				9326DF0B27F9E7BD00898519 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		9326DF1A27F9E7C500898519 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9326DEFE27F9E7BD00898519 /* Assets.xcassets */,
+				9326DF1B27F9E88D00898519 /* LensDatabase.JSON */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +147,9 @@
 			dependencies = (
 			);
 			name = "DoFCalculator (macOS)";
+			packageProductDependencies = (
+				9354286027FA417F00ECF1E7 /* DoFCalc */,
+			);
 			productName = "DoFCalculator (macOS)";
 			productReference = 9326DF0927F9E7BD00898519 /* DoFCalculator.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 9326DEF627F9E7BB00898519;
+			packageReferences = (
+				9354285F27FA417F00ECF1E7 /* XCRemoteSwiftPackageReference "DoFCalc" */,
+			);
 			productRefGroup = 9326DF0427F9E7BD00898519 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9326DF1C27F9E88D00898519 /* LensDatabase.JSON in Resources */,
 				9326DF1027F9E7BD00898519 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +208,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9326DF1D27F9E88D00898519 /* LensDatabase.JSON in Resources */,
 				9326DF1127F9E7BD00898519 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9326DF0E27F9E7BD00898519 /* ContentView.swift in Sources */,
+				9303771427FA31070040F026 /* LensEditor.swift in Sources */,
 				9326DF0C27F9E7BD00898519 /* DoFCalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9326DF0F27F9E7BD00898519 /* ContentView.swift in Sources */,
+				9303771527FA31160040F026 /* LensEditor.swift in Sources */,
 				9326DF0D27F9E7BD00898519 /* DoFCalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +496,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9354285F27FA417F00ECF1E7 /* XCRemoteSwiftPackageReference "DoFCalc" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Spirou42/DoFCalc.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9354286027FA417F00ECF1E7 /* DoFCalc */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9354285F27FA417F00ECF1E7 /* XCRemoteSwiftPackageReference "DoFCalc" */;
+			productName = DoFCalc;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9326DEF727F9E7BB00898519 /* Project object */;
 }

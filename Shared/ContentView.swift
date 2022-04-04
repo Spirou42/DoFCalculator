@@ -7,11 +7,11 @@
  Copyright © 2022 Carsten Müller. All rights reserved.
  */
 import SwiftUI
+import DoFCalc
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+      LensEditor(lens:Lens())
     }
 }
 

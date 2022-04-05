@@ -18,6 +18,9 @@
 		9326DF1C27F9E88D00898519 /* LensDatabase.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 9326DF1B27F9E88D00898519 /* LensDatabase.JSON */; };
 		9326DF1D27F9E88D00898519 /* LensDatabase.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 9326DF1B27F9E88D00898519 /* LensDatabase.JSON */; };
 		9354286127FA417F00ECF1E7 /* DoFCalc in Frameworks */ = {isa = PBXBuildFile; productRef = 9354286027FA417F00ECF1E7 /* DoFCalc */; };
+		93B8863127FC6DED0011C35F /* Extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 93B8863027FC6DED0011C35F /* Extensions */; };
+		93B8863427FC6E430011C35F /* DoFCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8863327FC6E430011C35F /* DoFCalculator.swift */; };
+		93B8863527FC6E430011C35F /* DoFCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B8863327FC6E430011C35F /* DoFCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,8 @@
 		9326DF0B27F9E7BD00898519 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		9326DF1B27F9E88D00898519 /* LensDatabase.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LensDatabase.JSON; sourceTree = "<group>"; };
 		9354286227FA41DE00ECF1E7 /* DoFCalc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DoFCalc; path = ../DoFCalc; sourceTree = "<group>"; };
+		93B8863227FC6E0C0011C35F /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Extensions; path = ../Extensions; sourceTree = "<group>"; };
+		93B8863327FC6E430011C35F /* DoFCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoFCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B8863127FC6DED0011C35F /* Extensions in Frameworks */,
 				9354286127FA417F00ECF1E7 /* DoFCalc in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				9303771327FA31070040F026 /* LensEditor.swift */,
+				93B8863327FC6E430011C35F /* DoFCalculator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -62,6 +69,7 @@
 		9303771627FA33540040F026 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				93B8863227FC6E0C0011C35F /* Extensions */,
 				9354286227FA41DE00ECF1E7 /* DoFCalc */,
 			);
 			name = Packages;
@@ -149,6 +157,7 @@
 			name = "DoFCalculator (macOS)";
 			packageProductDependencies = (
 				9354286027FA417F00ECF1E7 /* DoFCalc */,
+				93B8863027FC6DED0011C35F /* Extensions */,
 			);
 			productName = "DoFCalculator (macOS)";
 			productReference = 9326DF0927F9E7BD00898519 /* DoFCalculator.app */;
@@ -183,6 +192,7 @@
 			mainGroup = 9326DEF627F9E7BB00898519;
 			packageReferences = (
 				9354285F27FA417F00ECF1E7 /* XCRemoteSwiftPackageReference "DoFCalc" */,
+				93B8862F27FC6DED0011C35F /* XCRemoteSwiftPackageReference "Extensions" */,
 			);
 			productRefGroup = 9326DF0427F9E7BD00898519 /* Products */;
 			projectDirPath = "";
@@ -221,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9326DF0E27F9E7BD00898519 /* ContentView.swift in Sources */,
+				93B8863427FC6E430011C35F /* DoFCalculator.swift in Sources */,
 				9303771427FA31070040F026 /* LensEditor.swift in Sources */,
 				9326DF0C27F9E7BD00898519 /* DoFCalculatorApp.swift in Sources */,
 			);
@@ -231,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9326DF0F27F9E7BD00898519 /* ContentView.swift in Sources */,
+				93B8863527FC6E430011C35F /* DoFCalculator.swift in Sources */,
 				9303771527FA31160040F026 /* LensEditor.swift in Sources */,
 				9326DF0D27F9E7BD00898519 /* DoFCalculatorApp.swift in Sources */,
 			);
@@ -506,6 +518,14 @@
 				kind = branch;
 			};
 		};
+		93B8862F27FC6DED0011C35F /* XCRemoteSwiftPackageReference "Extensions" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Spirou42/Extensions.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -513,6 +533,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9354285F27FA417F00ECF1E7 /* XCRemoteSwiftPackageReference "DoFCalc" */;
 			productName = DoFCalc;
+		};
+		93B8863027FC6DED0011C35F /* Extensions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B8862F27FC6DED0011C35F /* XCRemoteSwiftPackageReference "Extensions" */;
+			productName = Extensions;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

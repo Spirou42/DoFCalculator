@@ -24,11 +24,10 @@ struct LensEditor: View {
     let columns: [GridItem] = [GridItem(.fixed(100),alignment:.trailing),
                                GridItem(.fixed(270),alignment:.leading)]
     
-    let columns2:[GridItem] = [GridItem(.fixed( 120),spacing:0,alignment: .trailing),
-                               GridItem(.fixed(86),spacing:0,alignment: .leading),
-                               GridItem(.fixed(120),spacing:0,alignment: .trailing),
-                               
-    ]
+//    let columns2:[GridItem] = [GridItem(.fixed( 120),spacing:0,alignment: .trailing),
+//                               GridItem(.fixed(86),spacing:0,alignment: .leading),
+//                               GridItem(.fixed(120),spacing:0,alignment: .trailing)
+//    ]
     VStack(spacing:5){
       Text("Create Lens").font(.largeTitle).padding([.top],10)
       Divider().padding([.bottom],5)

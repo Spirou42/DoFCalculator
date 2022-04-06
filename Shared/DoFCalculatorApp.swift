@@ -20,6 +20,7 @@ class DoFCalculatorApp: App {
       ContentView()
     }
   }
+  
   required init (){
   }
 }

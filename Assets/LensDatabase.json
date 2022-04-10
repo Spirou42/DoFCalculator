@@ -5,25 +5,24 @@
       "Model": "105mm F2,8 DG DN MACRO | Art",
       "MaximumAperture": 2.8,
       "MinimumAperture": 22,
-      "FocalLength": 105,
-      "MinimalFocalDistance": 29.5
+      "FocalLength": 105.0,
+      "MinimalFocalDistance": 295
     },
     {
       "Manufacturer": "Sigma",
       "Model": "150mm F2.8 APO MACRO DG HSM",
       "MaximumAperture": 2.8,
       "MinimumAperture": 22,
-      "FocalLength": 150,
-      "MinimalFocalDistance": 38.0
+      "FocalLength": 150.0,
+      "MinimalFocalDistance": 380
     },
     {
       "Manufacturer": "Sigma",
       "Model": "70mm  F2.8 DG MACRO",
       "MaximumAperture": 2.8,
       "MinimumAperture": 22,
-      "FocalLength": 70,
-      "MinimalFocalDistance": 25.7
+      "FocalLength": 70.0,
+      "MinimalFocalDistance": 257
     }
   ]
-  
 }

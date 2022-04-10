@@ -8,26 +8,35 @@
 import SwiftUI
 import Combine
 import DoFCalc
+import Extensions
 
-
-
-struct LensEditor: View {
+struct LensEditor: View{
+  
+  //#if canImport(UIKit)
+  //  @State var localWindow: UIWindow?
+  //#elseif canImport(AppKit)
+  //  @State var localWindow: NSWindow?
+  //#endif
   
   @ObservedObject var lens:Lens
+  
+  var backstore:Lens
   
   @State var calc:Double = LengthConvert.mm.rawValue
   
   @State var displayValue:Double
   @FocusState private var focalLengthIsFocused: Bool
   
+  @EnvironmentObject private var application:DoFCalculatorApp
+  
   var body: some View {
     let columns: [GridItem] = [GridItem(.fixed(100),alignment:.trailing),
                                GridItem(.fixed(270),alignment:.leading)]
     
-//    let columns2:[GridItem] = [GridItem(.fixed( 120),spacing:0,alignment: .trailing),
-//                               GridItem(.fixed(86),spacing:0,alignment: .leading),
-//                               GridItem(.fixed(120),spacing:0,alignment: .trailing)
-//    ]
+    //    let columns2:[GridItem] = [GridItem(.fixed( 120),spacing:0,alignment: .trailing),
+    //                               GridItem(.fixed(86),spacing:0,alignment: .leading),
+    //                               GridItem(.fixed(120),spacing:0,alignment: .trailing)
+    //    ]
     VStack(spacing:5){
       Text("Create Lens").font(.largeTitle).padding([.top],10)
       Divider().padding([.bottom],5)
@@ -39,15 +48,15 @@ struct LensEditor: View {
         TextField("Model",text:$lens.modelName)
         
       }.padding([.leading, .trailing,.bottom],8)
-        
+      
       
       
       LazyVGrid(columns: columns,spacing: 6){
         Text("")
         //Text("")
         Text("Aperture").font(.title2).padding([.top],6).padding([.leading],-50)
-  
-
+        
+        
         Text("max:")
         HStack(){
           Picker("", selection: $lens.maxAperture){
@@ -80,7 +89,7 @@ struct LensEditor: View {
           //            }.frame(width:80)
           Text("mm").padding([.leading],12)
         }
-  
+        
         Text("min. Distance:")
         HStack{
           TextField("focal distance",value: $displayValue,format:.number)
@@ -103,15 +112,36 @@ struct LensEditor: View {
           .frame(width:60)
         }
       }.padding([.leading,.trailing,.bottom],8)
-      
+      HStack{
+        Button(action: {
+          application.addLensIfNeeded(someLens: lens)
+          application.saveLensData()
+#if canImport(AppKit)
+          NSApplication.shared.keyWindow?.close()
+#endif
+        }){
+          Text("Save")
+        }.buttonStyle(GradientGlyphButtonStyle(buttonColor:.lightGray, labelColor:.black, cornerRadius: 13, width:80, height:24, bevelSize:3))
+        Spacer().frame(width:100)
+        Button(action:{
+          lens &= backstore
+#if canImport(AppKit)
+          NSApplication.shared.keyWindow?.close()
+#endif
+        }){
+          Text("Cancel")
+        }.buttonStyle(GradientGlyphButtonStyle(buttonColor:.lightGray, labelColor:.black, cornerRadius: 13, width:80, height:24, bevelSize:3))
+      }.padding([.bottom])
     }.font(.title3)
       .frame(width: 450.0) // VStack
   }
   
   init(lens:Lens){
     self.lens = lens
+    self.backstore = Lens(another: lens)
     self.displayValue = lens.minimalFocalDistance
   }
+
 }
 
 struct LensEditor_Previews: PreviewProvider {

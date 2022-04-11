@@ -13,13 +13,9 @@ struct ContentView: View {
   @EnvironmentObject var appData:ApplicationData
 
   var body: some View {
-    DoFCalculator(selectedLens: 0,
-                  selectedSensor: "1. Full Frame",
-                  selectedZeiss: Sensor.ZeissRatio.modern.rawValue,
-                  selectedAperture: 8.0,
-    							focalDistance: 380,
-    							focalDistanceDisplayValue: 380)
+    DoFCalculator()
         .environmentObject(appData)
+        .frame(height:.none)
     }
 }
 

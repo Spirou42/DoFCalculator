@@ -11,7 +11,8 @@ import DoFCalc
 
 struct ContentView: View {
   @EnvironmentObject var appData:ApplicationData
-
+  public static let needsNewSize = Notification.Name("needsNewSize")
+  
   var body: some View {
     DoFCalculator()
         .environmentObject(appData)

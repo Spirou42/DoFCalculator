@@ -27,6 +27,11 @@ struct DoFCalculator: View {
   @EnvironmentObject var appData:ApplicationData
   @EnvironmentObject var application:DoFCalculatorApp
   
+  
+  @State var toggler:Bool = false
+  
+  @State  var commonSize = CGSize()
+  
   var lensFromSelection:Lens{
     get {
       return appData.lensData.lenses[selectedLens]
@@ -66,12 +71,19 @@ struct DoFCalculator: View {
     calculator.sensor = self.sensorFromSelection
   }
   
+  public var lastSize:CGSize = CGSize(width: 0, height: 0)
+  public func sizeObserver(_ size:CGSize){
+    
+  }
+  
+  
   var body: some View {
+    
     VStack(spacing: 5){
       Text("DoF Calculator").font(.largeTitle).frame(alignment:.center)
       Collapsible(label: {
         Text("Sensor").font(.title)
-      }){
+      }, toggled: $toggler){
         // Sensor settings
         LazyVGrid(columns:columns,spacing:5){
           //          Text("")
@@ -99,11 +111,11 @@ struct DoFCalculator: View {
           }
           Text("")
         }
-      }// Collapsible
+      }
       
       Collapsible(label: {
         Text("Lens").font(.title)
-      }){
+      }, toggled: $toggler){
         
         LazyVGrid(columns:columns,spacing:5){
           
@@ -137,7 +149,7 @@ struct DoFCalculator: View {
       
       Collapsible(label: {
         Text("Settings").font(.title)
-      }){
+      }, toggled: $toggler){
         
         LazyVGrid(columns:columns,spacing:5){
           Text("Aperture:")
@@ -182,7 +194,7 @@ struct DoFCalculator: View {
         }
       }
       Divider()
-
+      
       LazyVGrid(columns:columns,spacing:5){
         Group{
           Text("Hyper: ")
@@ -206,12 +218,22 @@ struct DoFCalculator: View {
           Text("")
         }
       }.font(.title)
-      
+        .onAppear(){
+          updateCalculator()
+        }
       Spacer()
-    }.padding()
-      .frame(minHeight: 300, idealHeight: .none, maxHeight:600)
-      .fixedSize(horizontal:true, vertical:false)
-      .animation(.easeOut)
+    }.onChange(of: toggler) { state in
+      print ("toggled ")
+      print ("Geometry is now: \(commonSize)")
+      NotificationCenter.default.post(name: ContentView.needsNewSize, object: commonSize)
+    }
+    .readSize { textSize in
+      commonSize = textSize
+    }// Collapsible
+    .padding()
+    .frame(minHeight: .none, idealHeight: .none, maxHeight:.none)
+    .fixedSize(horizontal:true, vertical:false)
+    .animation(.easeOut,value: toggler)
   }
   
 }
@@ -219,6 +241,6 @@ struct DoFCalculator: View {
 struct DoFCalculator_Previews: PreviewProvider {
   static var previews: some View {
     DoFCalculator()
-    .environmentObject(ApplicationData(lenses: Lenses.dummyLenses()))
+      .environmentObject(ApplicationData(lenses: Lenses.dummyLenses()))
   }
 }

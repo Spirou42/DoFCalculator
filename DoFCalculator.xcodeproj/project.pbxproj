@@ -32,6 +32,7 @@
 		9326DF0927F9E7BD00898519 /* DoFCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoFCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9326DF0B27F9E7BD00898519 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		9326DF1B27F9E88D00898519 /* LensDatabase.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LensDatabase.json; sourceTree = "<group>"; };
+		9327724828087CE400277B9A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9354286227FA41DE00ECF1E7 /* DoFCalc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DoFCalc; path = ../DoFCalc; sourceTree = "<group>"; };
 		93B8863227FC6E0C0011C35F /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Extensions; path = ../Extensions; sourceTree = "<group>"; };
 		93B8863327FC6E430011C35F /* DoFCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoFCalculator.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		9326DEF627F9E7BB00898519 = {
 			isa = PBXGroup;
 			children = (
+				9327724828087CE400277B9A /* README.md */,
 				9303771627FA33540040F026 /* Packages */,
 				9326DF1A27F9E7C500898519 /* Assets */,
 				9326DEFB27F9E7BB00898519 /* Shared */,
